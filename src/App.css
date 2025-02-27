@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+nav a.active{
+  color: green; padding:10px; margin:0 10px; 
+}
+
+ul, li { list-style-type: none;}
+
+.navigation { border:1px red solid; display: flex;}
+.navigation li { margin: 0 10px;}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

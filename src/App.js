@@ -1,42 +1,26 @@
+import React from "react";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import { Table, Container, } from 'reactstrap';
-import { useState, useEffect } from 'react';
+import Welcome from './components/Welcome';
+import Guests from './components/Guests';
+import Contact from './components/Contact';
+import Root from "./Root";
+import Users from "./components/Users";
+import Footer from "./Footer";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      { path: "/", element: <Welcome />, },
+      { path: "/guest", element: <Guests />, },
+      { path: "/contact", element: <Contact />, },
+      { path: "/users", element: <Users />, }
+    ],    
+  },
+]);
 
 export default function App() {
-
-  const [brands, setBrands] = useState([]);    
-
-  useEffect(() => {
-    fetch('http://127.0.0.1:8000/api/brands')
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setBrands(data);
-      });
-  }, []);
-
-  return (
-    <div className="App">
-      <Container>
-        <h1>Welcome to Priya's Marriage</h1>
-        <p>Guest list</p>
-        <Table bordered={true}> 
-            <thead> 
-                <tr> 
-                    <th>Name</th> 
-                    <th>Surname</th>
-                    <th>Phone</th>
-                </tr> 
-            </thead> 
-            <tbody> 
-              {/* {brands.map((brand) => (
-                  <p key={brand.id}></p>
-              ))}        */}
-            </tbody> 
-        </Table>             
-      </Container>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }

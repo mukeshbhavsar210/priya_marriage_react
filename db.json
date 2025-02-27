@@ -1,0 +1,12 @@
+{
+    "users": [
+      { "id": 1, "name": "Alice", "age": 25 },
+      { "id": 2, "name": "Bob", "age": 30 },
+      { "id": 3, "name": "Charlie", "age": 35 },
+      { "id": 4, "name": "Mukesh", "age": 49 }
+    ],
+
+    "products": [
+      { "id": 1, "name": "Mobile", "category": "iPhone", "price": 49000, "image": "https://www.imagineonline.store/cdn/shop/files/iPhone_15_Pink_PDP_Image_Position-1__en-IN.jpg?v=1694605258"  }
+    ]
+  }
